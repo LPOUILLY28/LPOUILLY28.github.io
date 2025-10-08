@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leo POUILLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="fade-in">
+  <div class="container">
+
+    <header>
+      <div class="name">
+        <!-- Tête robot animée -->
+        <div class="robot3d">
+          <svg viewBox="0 0 64 64" width="48" height="48">
+            <!-- Tête principale -->
+            <ellipse id="robot-head" cx="32" cy="34" rx="22" ry="18" fill="#23272f" stroke="#00ff88" stroke-width="3"/>
+            <!-- "Visière" effet 3D -->
+            <ellipse cx="32" cy="30" rx="18" ry="8" fill="#3e92cc" opacity="0.7"/>
+            <!-- Yeux animés -->
+            <ellipse id="eye-left" cx="24" cy="34" rx="3.2" ry="4" fill="#fff"/>
+            <ellipse id="eye-right" cx="40" cy="34" rx="3.2" ry="4" fill="#fff"/>
+            <ellipse id="pupil-left" cx="24" cy="36" rx="1.3" ry="1.8" fill="#23272f"/>
+            <ellipse id="pupil-right" cx="40" cy="36" rx="1.3" ry="1.8" fill="#23272f"/>
+            <!-- Bouche -->
+            <rect x="28" y="44" width="8" height="3.5" rx="2" fill="#00ff88"/>
+            <!-- Antennes -->
+            <rect x="30" y="10" width="4" height="12" rx="2" fill="#3e92cc"/>
+            <circle cx="32" cy="10" r="4" fill="#00ff88" stroke="#23272f" stroke-width="2"/>
+          </svg>
+      </div>
+          Leo POUILLY - Portfolio
+        </span>
+  </div>  
+        
+    
+      <nav>
+        <a href="index.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="academics.html">Academics</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+    </header>
+
+    <main>
+      
+      <!-- About section -->
+      <div class="left">
+        <p>
+          I'm currently an engineering student at Arts et Métiers ParisTech, a top French engineering school. My goal is to pursue graduate studies in the United States in Mechanical Engineering.
+        </p>
+        <p>
+          I still remember the first time I brought an engine to life after hours of tinkering : that spark, that sound that feeling of creation. Whether it was upgrading engines or designing small robotic systems, I have always been captivated by how mechanics and programming can merge to give motion and purpose to metal.
+        </p>
+        <p>
+        <a href="academics.html">Learn more about my academics </a>.
+        </p>
+      </div>
+
+      <div class="right">
+        <img src="image/photo_profil.jpg" alt="Leo's Photo" />
+        <h2>Leo POUILLY</h2>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/léo-pouilly/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:leo.pouilly@ensam.eu"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/LPOUILLY28" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Projet avec carte stylée -->
+    <section style="margin-top: 60px;">
+      <h2 style="text-align: center; margin-bottom: 40px; color: #111;">Featured Project</h2>
+
+      <a href="FSAM.html" class="card-link" style="text-decoration: none; color: inherit;">
+        <div class="card-wrapper">
+          <div class="card-inner">
+            <img src="image/FSAM/voiture_f1.png" alt="Featured Project" />
+            <div class="card-content">
+              <h3 style="margin-top: 0; font-weight: 700;">🎧 Wind Noise Reduction in Ski Helmets using Lock-In Amplifier</h3>
+              <p style="line-height: 1.5; font-weight: 300;">
+                Designed and tested a signal-processing system using a Lock-In Amplifier to isolate voices from wind noise in ski helmets, enhancing safety and communication, as well as minimizing the system.
+              </p>
+              <span class="rainbow-hover">See more about this project</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="projects.html" class="project-link">See all projects →</a>
+      </div>
+    </section>
+    </div>
+  <script src="script.js"></script>
+ <!-- Bande dynamique défilante de projets -->
+<section class="project-marquee">
+  <div class="marquee-inner">
+    <a href="moto.html" class="project-marquee-card">
+      <img src="image/Projet 50cc/motoV2.png" alt="Moto Fantastique">
+      <span>🦄 Moto Fantastique CAD</span>
+    </a>
+    <a href="eolienne.html" class="project-marquee-card">
+      <img src="image/LeRobot/Projet LeRobot.png" alt="Wind Turbine">
+      <span>🌿 UrbanWind Turbine</span>
+    </a>
+    <a href="FSAM.html" class="project-marquee-card">
+      <img src="img/FSAM.jpg" alt="Wind Noise">
+      <span>🎧 Wind Noise Reduction</span>
+    </a>
+    <!-- Ajoute autant de projets que tu veux ! -->
+    <!-- Pour l'effet continu, duplique les projets une deuxième fois -->
+    <a href="moto.html" class="project-marquee-card">
+      <img src="image/Projet 50cc/motoV2.png" alt="Hands-on moto">
+      <span> My sherco 50cc /span>
+    </a>
+    <a href="LeRobot.html" class="project-marquee-card">
+      <img src="image/LeRobot/Projet LeRobot.png" alt="LeRobot">
+      <span> S101-ARM</span>
+    </a>
+    <a href="FSAM.html" class="project-marquee-card">
+      <img src="image/FSAM/voiture_f1.png" alt="FSAM">
+      <span>Formula Student Competition</span>
+    </a>
+    <a href="FSAM.html" class="project-marquee-card">
+      <img src="image/FSAM/voiture_f1.png" alt="FSAM">
+      <span>Formula Student Competition</span>
+    </a>
+  </div>
+</section>
+</body>
+</html>
