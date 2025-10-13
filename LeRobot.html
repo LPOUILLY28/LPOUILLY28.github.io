@@ -12,69 +12,78 @@
 </head>
 <body class="fade-in">
   <div class="container">
-    <header>
-      <div class="name">
-        <a href="index.html" style="text-decoration: none; color: inherit;">Leo POUILLY - Portfolio</a>
-      </div>
-      <nav>
-        <a href="index.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="projects.html">Projects</a>
-        <a href="academics.html">Academics</a>
-        <a href="experience.html">Experience</a>
-      </nav>
-    </header>
+<header>
+  <div class="name">
+    <!-- Tête robot animée -->
+    <div class="robot3d">
+      <svg viewBox="0 0 64 64" width="48" height="48">
+        <!-- Tête principale -->
+        <ellipse id="robot-head" cx="32" cy="34" rx="22" ry="18" fill="#23272f" stroke="#00ff88" stroke-width="3"/>
+        <!-- "Visière" effet 3D -->
+        <ellipse cx="32" cy="30" rx="18" ry="8" fill="#3e92cc" opacity="0.7"/>
+        <!-- Yeux animés -->
+        <ellipse id="eye-left" cx="24" cy="34" rx="3.2" ry="4" fill="#fff"/>
+        <ellipse id="eye-right" cx="40" cy="34" rx="3.2" ry="4" fill="#fff"/>
+        <ellipse id="pupil-left" cx="24" cy="36" rx="1.3" ry="1.8" fill="#23272f"/>
+        <ellipse id="pupil-right" cx="40" cy="36" rx="1.3" ry="1.8" fill="#23272f"/>
+        <!-- Bouche -->
+        <rect x="28" y="44" width="8" height="3.5" rx="2" fill="#00ff88"/>
+        <!-- Antennes -->
+        <rect x="30" y="10" width="4" height="12" rx="2" fill="#3e92cc"/>
+        <circle cx="32" cy="10" r="4" fill="#00ff88" stroke="#23272f" stroke-width="2"/>
+      </svg>
+    </div>
+    <a href="index.html" style="text-decoration: none; color: inherit;">Leo POUILLY - Portfolio</a>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html">Projects</a>
+    <a href="academics.html">Academics</a>
+    <a href="experience.html">Experience</a>
+  </nav>
+</header>
     <main>
 
-      <h1 class="projects-title">🌿 UrbanWind: Smart Micro-Wind Turbine Transmission System</h1>
-      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #333;">Comprehensive mechanical design of a compact urban wind turbine, blending analytical rigor with advanced 3D modeling.</p>
-      <div class="project">
-            <div class="project-info">
-                <h3>The Project</h3>
-                <p>UrbanWind is an engineering project focused on designing a high-efficiency micro wind turbine for urban environments. Our goal was to convert wind energy into electricity through a compact, reliable, and cost-effective system. Spanning multiple development phases, this project involved a complete mechanical and structural design of the wind turbine’s key components, including the rotor, gearbox, shafts, and bearings. Through a mix of analytical calculations, CAD modeling, and finite element simulations, we engineered a custom transmission system that meets the strict performance and durability standards required for continuous daily operation over 10 years.</p>
-            </div>
-            <div class="project-carousel"> 
-                <img src="img/projects/eolienne/eolienne.png" class="show" alt="Global view of the wind turbine" /> 
-            </div>
-      </div>
-
-      <div class="project reverse">
-        <div class="project-info"> 
-            <h3>Milestone 1 – System Design & Pre-Dimensioning</h3>
-            <p>TIn the first phase of the project, we focused on establishing the foundation of the turbine’s design. This involved a comprehensive analysis of the energy conversion chain — from wind to mechanical rotation — and setting technical requirements based on environmental constraints and target energy output (4.9 kW). We dimensioned the rotor, calculated the blade length and rotor diameter using aerodynamic formulas, and designed the hollow shaft and belt transmission system. This stage culminated in validating the feasibility of the power transmission chain using real engineering data and catalogs.</p>
+      <h1 class="projects-title">🤖 S101-ARM – Robotics Project</h1>
+      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #333;">Design, assembly, and programming of a mobile robot for autonomous navigation and manipulation.</p>
+      <!-- Bloc 1: texte gauche, images droite -->
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>Mechanical & Electronic Design</h2>
+          <p>I designed and assembled the robot’s chassis, integrating motors, sensors, and a microcontroller. The mechanical structure was optimized for stability and modularity, while the electronics allowed for precise control and feedback.</p>
         </div>
-        <div class="project-carousel">
-            <img src="img/projects/eolienne/3.png" class="show" alt="Jalon 1" />
-        </div>     
-      </div>
-
-      <div class="project">
-        <div class="project-info"><h3>Milestone 2 – Modeling the Powertrain System</h3>
-          <p>During the second phase, we transitioned from theoretical sizing to a concrete mechanical model using 3DX software. The core task was dimensioning the speed multiplier — a crucial gearbox component connecting the rotor to the generator. We performed iterative calculations for gear selection using Hertz and bending stress criteria, considering material fatigue, torque transmission, and geometry optimization. Simultaneously, we selected and validated the ball bearings using SKF catalog data, ensuring long-term durability. The result was a fully modeled, feasible transmission system ready for virtual assembly.</p>
-        </div>
-        <div class="project-carousel">        
-            <img src="img/projects/eolienne/2.png" class="show" alt="Jalon 2" />
+        <div class="academic-images">
+          <div class="carousel" data-carousel="robot1">
+            <img src="image/LeRobot/Projet LeRobot.png" class="carousel-image show" alt="S101-ARM robot" />
+          </div>
         </div>
       </div>
-
-      <div class="project reverse">
-        <div class="project-info">          
-            <h3>Milestone 3 – Structural Verification & CAD Completion</h3>
-            <p>The final milestone focused on refining and verifying the mechanical components. We analytically and numerically verified shaft dimensions using ABAQUS finite element simulations, ensuring stress limits (Von Mises, Tresca) and maximum deflection criteria were met. We finalized the gearbox housing design with detailed CAD features such as split casings, sealing systems, and structural reinforcements. Additionally, we corrected the bearing selections to accommodate updated forces, and integrated all components into a clean, manufacturable assembly. This comprehensive validation ensures that UrbanWind is not only theoretically robust but practically buildable.</p>
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="pdf/rapport_pjt.pdf" download class="details-button" style="padding: 15px 35px; background-color: rgb(66, 94, 170); color: white; font-weight: 600; border-radius: 6px; text-decoration: none; transition: background-color 0.3s ease;">
-                Download the Project Report
-                </a>
-            </div>
+      <!-- Bloc 2: images gauche, texte droite -->
+      <div class="academic-block">
+        <div class="academic-images">
+          <div class="carousel" data-carousel="robot2">
+            <img src="image/LeRobot/Projet LeRobot.png" class="carousel-image show" alt="Robot navigation" />
+          </div>
         </div>
-        <div class="project-carousel">    
-            <img src="img/projects/eolienne/1.png" class="show" alt="Jalon 3" /> 
+        <div class="academic-text">
+          <h2>Programming & Autonomous Navigation</h2>
+          <p>I programmed the robot to follow lines, avoid obstacles, and execute autonomous routines. Using sensor fusion and control algorithms, the robot could adapt to its environment and complete navigation tasks reliably.</p>
+        </div>
+      </div>
+      <!-- Bloc 3: texte gauche, images droite -->
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>Manipulation & Teamwork</h2>
+          <p>I developed and tested the robotic arm for basic manipulation tasks, such as picking and placing objects. Collaboration with teammates was essential for integrating hardware and software, troubleshooting, and optimizing performance.</p>
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="robot3">
+            <img src="image/LeRobot/Projet LeRobot.png" class="carousel-image show" alt="Robot arm manipulation" />
+          </div>
         </div>
       </div>
 
-
-
-      <!-- Back to Projects -->
       <div style="margin-top: 60px; text-align: left;">
         <a href="projects.html" class="project-link">← Back to Projects</a>
       </div>
