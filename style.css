@@ -41,36 +41,60 @@ body::after {
   border: 1.8px solid #e1e7f2;
 }
 
-/* -- HEADER -- */
+/* -- HEADER RACING STYLE -- */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 38px;
-  padding-bottom: 14px;
-  border-bottom: 2.5px solid var(--primary);
-  background: linear-gradient(90deg,#f7fbff 80%,#dbeafe 100%);
-  border-radius: 14px 14px 0 0;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, #1a1d29 0%, #23272f 50%, #2a2e3a 100%);
+  border-radius: 16px;
   position: relative;
-}
-header::before {
-  content: "";
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, #246bfd 0%, #70a1ff 70%, #f7fbff 100%);
-  filter: blur(4px);
-  opacity: 0.25;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(36,107,253,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
-.name {
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-shadow: 0 2px 8px #c7eaff71;
+/* Racing stripes effect */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  right: -10%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #00ff88 15%, 
+    #00ff88 20%, 
+    transparent 25%,
+    transparent 30%,
+    #246bfd 45%,
+    #246bfd 50%,
+    transparent 55%,
+    transparent 60%,
+    #ff3366 75%,
+    #ff3366 80%,
+    transparent 85%
+  );
+  animation: racing-stripe 3s linear infinite;
+}
+
+@keyframes racing-stripe {
+  0% { transform: translateX(-20%);}
+  100% { transform: translateX(20%);}
+}
+
+/* Carbon fiber pattern */
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+    repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 /* -- NAVIGATION -- */
@@ -158,20 +182,96 @@ main {
   box-shadow: var(--shadow-card);
   border: 1.3px solid #e1e7f2;
 }
+
+/* Style spécial pour la section Conception aile de planeur */
+.glider-wing {
+  border-left: 6px solid #246bfd;
+  background: linear-gradient(120deg, #eaf2fb 80%, #70a1ff 100%);
+  box-shadow: 0 4px 32px #246bfd33;
+}
+.glider-wing h3 {
+  color: #246bfd;
+  font-size: 1.25rem;
+}
+.glider-wing .cta {
+  background: #246bfd;
+  color: #fff;
+  border-color: #70a1ff;
+}
+.glider-wing .cta:hover {
+  background: #00ff88;
+  color: #1a1d29;
+  border-color: #246bfd;
+}
+
+
+/* -- ACADEMIC BLOCKS (LAYOUT HORIZONTAL) -- */
+.academic-block {
+  display: flex;
+  gap: 30px;
+  background: linear-gradient(135deg,#f7fbff 60%,#eaf2fb 100%);
+  border-radius: 15px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-card);
+  border: 1.3px solid #e1e7f2;
+}
+
+.academic-text {
+  flex: 1.8;
+}
+
+.academic-text h2 {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.academic-text p {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.academic-images {
+  flex: 1;
+  max-width: 350px;
+}
+
+.academic-images .carousel {
+  height: 240px;
+}
+
+.academic-images .carousel-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .academic-block {
+    flex-direction: column;
+  }
+  .academic-images {
+    max-width: 100%;
+  }
+  .academic-images .carousel {
+    height: 220px;
+  }
+}
+
 .timeline-marker {
   width: 16px; height: 16px;
   background: var(--accent);
   border-radius: 50%;
   border: 3px solid #fff;
   box-shadow: 0 0 10px #246bfd;
-  margin-right: 12px;
-  display: inline-block;
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 .timeline-content h2, .project-info h3 {
   color: var(--primary);
   font-weight: 700;
 }
-
 /* -- CAROUSELS -- */
 .carousel,
 .project-carousel {
@@ -198,29 +298,58 @@ main {
 }
 .arrow {
   cursor: pointer;
-  height: 36px; width: 36px;
+  height: 44px; 
+  width: 44px;
   position: absolute;
-  top: 45%; 
-  background: var(--accent);
+  top: 50%; 
+  transform: translateY(-50%);
+  background: rgba(36,107,253,0.95);
   border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 12px #70a1ff33;
-  transition: background 0.2s, transform 0.2s;
-  border: 1.5px solid #fff;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.9);
+  z-index: 10;
 }
-.arrow.prev { left: 10px;}
-.arrow.next { right: 10px;}
-.arrow:hover { background: var(--secondary); transform: scale(1.14);}
+
+.arrow.prev { left: 14px;}
+.arrow.next { right: 14px;}
+
+.arrow:hover { 
+  background: #00ff88;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 24px rgba(0,255,136,0.6);
+  border-color: #fff;
+}
+
+.arrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  display: block;
+}
+
+.arrow.prev::before {
+  transform: rotate(-135deg);
+  margin-left: 3px;
+}
+
+.arrow.next::before {
+  transform: rotate(45deg);
+  margin-right: 3px;
+}
+
+.arrow:hover::before {
+  border-color: #1a1d29;
+}
+
 .arrow-top, .arrow-bottom {
-  background: var(--primary);
-  height: 4px; left: 0; position: absolute; top: 50%; width: 100%;
-  border-radius: 2px;
+  display: none;
 }
-.arrow.next .arrow-top { transform: rotate(45deg);}
-.arrow.next .arrow-bottom { transform: rotate(-45deg);}
-.arrow.prev .arrow-top { transform: rotate(-45deg);}
-.arrow.prev .arrow-bottom { transform: rotate(45deg);}
-.arrow:hover .arrow-top, .arrow:hover .arrow-bottom { background: #fff;}
 .carousel-dots {
   position: absolute; bottom: 12px; left: 50%;
   transform: translateX(-50%);
@@ -276,8 +405,8 @@ main {
 /* -- BUTTONS -- */
 .cta, .project-link, .details-button, .rainbow-hover {
   display: inline-block;
-  background: var(--accent);
-  color: #fff;
+  background: #00ff88;  /* Vert néon */
+  color: #1a1d29;  
   padding: 11px 22px;
   border-radius: 9px;
   font-weight: 700;
@@ -406,6 +535,22 @@ main {
   border: 2px solid var(--accent);
   background: #eaf2fb;
 }
+
+/* Spécifique pour les images ENTREP's et Sherco 50cc */
+.project-marquee-card img.entrep-logo,
+.project-marquee-card img.sherco-img {
+  object-fit: contain;
+  background: #fff;
+}
+
+/* Alignement vertical des blocs du bandeau défilant */
+.project-marquee-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-marquee-card span {
   font-size: 1rem;
   font-weight: 600;
@@ -462,3 +607,4 @@ main {
   .project-marquee-card { min-width: 128px; max-width: 128px; padding: 8px 3px 6px 3px;}
   .project-marquee-card img { width: 90px; height: 54px;}
 }
+
