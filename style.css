@@ -247,6 +247,29 @@ main {
   object-fit: cover;
 }
 
+/* Carousel arrows placed at image edges for academic blocks */
+.academic-images .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(36,107,253,0.95);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  z-index: 12;
+}
+.academic-images .arrow.prev { left: 12px; }
+.academic-images .arrow.next { right: 12px; }
+
+/* Ensure the carousel container is positioned to allow absolute arrows */
+.academic-images .carousel { position: relative; overflow: hidden; }
+
+.academic-images .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display:flex; gap:8px; z-index:13; }
+.academic-images .carousel-dots span { width:9px; height:9px; border-radius:50%; background:#c7eaff; cursor:pointer; }
+.academic-images .carousel-dots span.active { background:var(--accent); transform: scale(1.2); }
+
 @media (max-width: 900px) {
   .academic-block {
     flex-direction: column;
@@ -458,6 +481,130 @@ main {
 }
 .skill:hover { background: var(--accent); color: #fff;}
 
+/* -- PROJECTS GRID -- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.project-card {
+  background: var(--light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e1e7f2;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(36,107,253,0.15);
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(36,107,253,0.1),
+    rgba(36,107,253,0.3)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #00ff88;
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,255,136,0.2);
+}
+
+.projects-title {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(36,107,253,0.15);
+}
+
+.projects-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
 /* -- LIGHTBOX -- */
 #lightbox {
   display: none;
@@ -607,4 +754,6 @@ main {
   .project-marquee-card { min-width: 128px; max-width: 128px; padding: 8px 3px 6px 3px;}
   .project-marquee-card img { width: 90px; height: 54px;}
 }
+
+
 
