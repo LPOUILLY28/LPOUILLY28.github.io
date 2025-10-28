@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Academics – Leo POUILLY</title>
+  <title>Academics — Leo POUILLY</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -11,6 +11,19 @@
   <div class="container">
     <header>
       <div class="name">
+        <div class="robot3d">
+          <svg viewBox="0 0 64 64" width="48" height="48">
+            <ellipse id="robot-head" cx="32" cy="34" rx="22" ry="18" fill="#23272f" stroke="#00ff88" stroke-width="3"/>
+            <ellipse cx="32" cy="30" rx="18" ry="8" fill="#3e92cc" opacity="0.7"/>
+            <ellipse id="eye-left" cx="24" cy="34" rx="3.2" ry="4" fill="#fff"/>
+            <ellipse id="eye-right" cx="40" cy="34" rx="3.2" ry="4" fill="#fff"/>
+            <ellipse id="pupil-left" cx="24" cy="36" rx="1.3" ry="1.8" fill="#23272f"/>
+            <ellipse id="pupil-right" cx="40" cy="36" rx="1.3" ry="1.8" fill="#23272f"/>
+            <rect x="28" y="44" width="8" height="3.5" rx="2" fill="#00ff88"/>
+            <rect x="30" y="10" width="4" height="12" rx="2" fill="#3e92cc"/>
+            <circle cx="32" cy="10" r="4" fill="#00ff88" stroke="#23272f" stroke-width="2"/>
+          </svg>
+        </div>
         <a href="index.html" style="text-decoration: none; color: inherit;">Leo POUILLY - Portfolio</a>
       </div>
       <nav>
@@ -25,21 +38,26 @@
     <main>
       <h1 style="text-align: center; margin-bottom: 60px;">Academic Journey</h1>
 
-      <section class="timeline">
-        <!-- === ITEM 1 === -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h2>Arts et Métiers ParisTech – Lille/Paris, France</h2>
-            <p><strong>Combined BS × MS Engineering Degree</strong></p>
-            <p>Sept 2024 – July 2027</p>
-            <p>Holistic engineering degree combining strong technical foundations in mechanics and industrial systems with business management and innovation skills. Trained to bridge engineering, technology, and strategic decision-making.</p>
+      <!-- ITEM 1 -->
+      <div class="academic-block">
+        <div class="academic-text">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div class="timeline-marker"></div>
+            <div>
+              <h2>Arts et Métiers ParisTech — Lille/Paris, France</h2>
+              <p><strong>Combined BS × MS Engineering Degree</strong></p>
+              <p style="color: #70a1ff; margin-bottom: 12px;">Sept 2024 — July 2027</p>
+              <p>Multidisciplinary engineering curriculum combining mechanical design, manufacturing, and industrial systems with data analysis, project management, and innovation strategy.
+Trained to bridge advanced engineering, entrepreneurship, and leadership, fostering both technical excellence and strategic vision through hands-on projects and collaborative teamwork.</p>
+            </div>
           </div>
-          <div class="timeline-carousel">
-            <div class="carousel" data-carousel="ensam">
-              <img src="image/historique_arts_metiers_paristech.jpg" class="carousel-image show" />
-              <img src="image/P1000874_Paris_XIII_Boulevard_de_l'Hopital_ENSAM_reductwk.jpg" class="carousel-image" />
-              <img src="image/Lille-Vue-jardin-1300x450.jpg" class="carousel-image" />
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="ensam">
+            <img src="image/ENSAM/Capture d'écran 2025-10-10 221309.png" class="carousel-image" />    
+            <img src="image/ENSAM/Lille-Vue-jardin-1300x450.jpg" class="carousel-image show" />
+            <img src="image/ENSAM/P1000874_Paris_XIII_Boulevard_de_l'Hopital_ENSAM_reductwk.jpg" class="carousel-image" />
+            <img src="image/ENSAM/historique_arts_metiers_paristech.jpg" class="carousel-image" />
             <div class="arrow prev" aria-label="Previous image">
               <div class="arrow-top"></div>
               <div class="arrow-bottom"></div>
@@ -49,24 +67,29 @@
               <div class="arrow-bottom"></div>
             </div>
             <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="academic-block">
+        <div class="academic-text">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div class="timeline-marker"></div>
+            <div>
+              <h2>CPGE — Lycée Hoche, Versailles</h2>
+              <p><strong>MPSI - MP (Mathematics/Physics/Engineering Science)</strong></p>
+              <p style="color: #8d70ff; margin-bottom: 12px;">Sept 2022 — July 2024</p>
+              <p>Elite undergraduate track in Advanced Mathematics & Physics : Highly selective two-year preparatory program. Trained in analytical thinking, abstraction, and rigorous problem-solving through intensive coursework and national-level competitive examinations.</p>
             </div>
           </div>
         </div>
-
-        <!-- === ITEM 2 === -->
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <h2>CPGE – Lycée Hoche, Versailles </h2>
-            <p><strong>MPSI - MP (mathematics/Physics/Engineering Science)</strong></p>
-            <p>Sept 2022 – July 2024</p>
-            <p>Intensive two-year preparatory program for top French engineering schools.</p>
-          </div>
-          <div class="timeline-carousel">
-            <div class="carousel cpge" data-carousel="cpge">
-              <img src="image/Lycée_Hoche_entree.jpg" class="carousel-image show" />
-              <img src="image/Lycée_Hoche_(ancien_couvent_de_la_Reine).jpg" class="carousel-image" />
-              <div class="arrow prev" aria-label="Previous image">
+        <div class="academic-images">
+          <div class="carousel" data-carousel="cpge">
+            <img src="image/HOCHE/Logo Hoche.png" class="carousel-image" />               
+            <img src="image/HOCHE/Lycée_Hoche_entree.jpg" class="carousel-image" />             
+            <img src="image/HOCHE/Lycée_Hoche_(ancien_couvent_de_la_Reine).jpg" class="carousel-image show" />
+            <div class="arrow prev" aria-label="Previous image">
               <div class="arrow-top"></div>
               <div class="arrow-bottom"></div>
             </div>
@@ -74,15 +97,14 @@
               <div class="arrow-top"></div>
               <div class="arrow-bottom"></div>
             </div>
-          <div class="carousel-dots"></div>
-            </div>
+            <div class="carousel-dots"></div>
           </div>
         </div>
-      </section>
+      </div>
+
     </main>
   </div>
 
-  <!-- === CAROUSEL JS LOGIC === -->
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
