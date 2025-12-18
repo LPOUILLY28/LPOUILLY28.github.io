@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design of Glider Wing and Research on its Aerodynamic Characteristics – Leo POUILLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body class="fade-in">
+  <div class="container">
+<header>
+  <div class="name">
+    <a href="index.html" aria-label="Home" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
+      <div class="logo-frame">
+        <img class="site-logo" src="image/logo_header.png" alt="Leo POUILLY logo" />
+      </div>
+      <span class="site-title">Leo POUILLY - Portfolio</span>
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="resume.html">Resume</a>
+    <div class="nav-dropdown">
+      <button class="dropdown-toggle" type="button">Projects</button>
+      <div class="dropdown-menu">
+        <a href="PJT_IA.html">AI & Machine Learning</a>
+        <a href="LC.html">Les Companions</a>
+        <a href="LeRobot.html">S101-ARM Robot</a>
+        <a href="FSAM.html">Formula Student</a>
+        <a href="PJT_Aile.html">Glider Wing Design</a>
+        <a href="REPCE.html">Shoulder Prosthesis</a>
+        <a href="AMJE.html">AMJE Lille</a>
+        <a href="CRI.html">Carbon Risk Intelligence</a>
+        <a href="ENTREP.html">ENTREP's</a>
+        <a href="TIPE.html">Sports Betting Arbitrage</a>
+        <a href="Foundry.html">Foundry skills</a>
+        <a href="SHERCO.html">Sherco</a>
+      </div>
+    </div>
+    <a href="academics.html">Academics</a>
+
+  </nav>
+</header>
+    <main>
+      <h1 class="projects-title" style="text-align: center;">Glider Wing Design – Computational Fluid Dynamics Engineering Project</h1>
+      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #333;">
+        Complete aerodynamic and structural sizing of a high-performance glider wing using analytical methods, CFD (Siemens CCM+), and FEA (Abaqus).
+      </p>
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>1. Preliminary Design & Airfoil Selection 
+
+[Image of Airfoil Geometry]
+</h2>
+          <p>
+            The initial phase involved defining the wing geometry to meet specific flight constraints: a mass of 500kg, a flight speed of 80km/h, and a total wingspan of 22m.
+          </p>
+          <p>
+            We compared two airfoil profiles, the <strong>RAF 27</strong> and the <strong>CLARK Y</strong>. By calculating the Reynolds number (1.78 &times; 10<sup>6</sup>) and analyzing Lift (C<sub>z</sub>) vs. Drag (C<sub>x</sub>) polars, we determined that the Clark Y airfoil offered superior performance.
+          </p>
+          <p>
+            The <strong>Clark Y</strong> was selected for its higher maximum lift-to-drag ratio (f<sub>max</sub> = 115 vs 70) and a more favorable stall angle (14.7&deg;), ensuring better aerodynamic efficiency and safety margins.
+          </p>
+          <div style="margin-top: 20px;">
+            <a href="PDF/PJT Aile/CR_PJT_Aile_ANGLAIS.pdf" download class="details-button">
+              <i class="fa fa-download"></i> Download Preliminary Report
+            </a>
+          </div>
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="aile1">
+            
+            <img src="image/PJT Aile/graph_CV_CD.png" class="carousel-image show" alt="Lift vs Drag Polars" />
+            <img src="image/PJT Aile/CLARK_RAF27_FOIL.png" class="carousel-image" alt="Clark Y vs RAF 27 Comparison" />
+            
+            <div class="arrow prev" aria-label="Previous image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+             <div class="arrow next" aria-label="Next image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+            
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-block">
+        <div class="academic-images">
+          <div class="carousel" data-carousel="aile2">
+            
+            <img src="image/PJT Aile/k_epsilon_model.png" class="carousel-image show" alt="K-Epsilon Turbulence Model Results" />
+            <img src="image/PJT Aile/overview_mesh.png" class="carousel-image" alt="Mesh Overview Siemens CCM+" />
+            
+            <div class="arrow prev" aria-label="Previous image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+             <div class="arrow next" aria-label="Next image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+            
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+        <div class="academic-text">
+          <h2>2. CFD Simulation & Mesh Strategy </h2>
+          <p>
+            To validate the aerodynamic coefficients, we performed Computational Fluid Dynamics (CFD) simulations using <strong>Siemens CCM+</strong>. A critical part of this study was the <strong>mesh convergence analysis</strong>, ensuring that the results were independent of grid density.
+          </p>
+          <p>
+            We tested three flow regimes: inviscid, laminar, and turbulent. For the turbulent flow, we selected the <strong>K-Epsilon model</strong> due to its robustness and stability in convergence compared to K-Omega.
+          </p>
+          <p>
+            The simulation allowed us to visualize the pressure field and velocity vectors, confirming the generation of lift and the presence of a turbulent wake at the trailing edge.
+          </p>
+          <div style="margin-top: 20px;">
+            <a href="PDF/PJT Aile/Compte rendu PJT maillage (Siemens CCM).pdf" download class="details-button">
+              <i class="fa fa-download"></i> Download CFD/Mesh Report
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>3. Structural Analysis & Finite Element Modeling 
+
+[Image of Finite Element Analysis]
+</h2>
+          <p>
+            The final phase focused on the mechanical integrity of the wing. We utilized both analytical Euler-Bernoulli beam models and <strong>Abaqus FEA</strong> simulations to size the internal spar.
+          </p>
+          <p>
+            We conducted a parametric study comparing a <strong>hollow circular spar</strong> against a <strong>rectangular spar</strong>. The rectangular configuration using <strong>Aluminum 7075-T6</strong> was proved to be the optimal solution, satisfying all constraints: 
+            <br>• Max deflection < 50cm
+            <br>• Max stress < Elastic Limit (505 MPa)
+            <br>• Minimized mass.
+          </p>
+          <p>
+            Abaqus simulations confirmed that the rectangular spar maintained structural stability under both ground (static) and flight (dynamic) loading conditions.
+          </p>
+          <div style="margin-top: 20px;">
+            <a href="PDF/PJT Aile/CR_PJT_AILE_D_AVION_GROLET_ANGLAIS.pdf" download class="details-button">
+              <i class="fa fa-download"></i> Download Structural Report
+            </a>
+          </div>
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="aile3">
+            
+            <img src="image/PJT Aile/abaqus1.png" class="carousel-image show" alt="Abaqus FEA Simulation 1" />
+            <img src="image/PJT Aile/Profil_Aile.png" class="carousel-image" alt="Wing Profile Geometry" />
+            <img src="image/PJT Aile/abaqus2.png" class="carousel-image" alt="Abaqus FEA Simulation 2" />
+            
+            <div class="arrow prev" aria-label="Previous image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+             <div class="arrow next" aria-label="Next image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+            
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; text-align: left;">
+        <a href="projects.html" class="project-link">← Back to Projects</a>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

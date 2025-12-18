@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>S101-ARM LeRobot – Leo POUILLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body class="fade-in">
+  <div class="container">
+<header>
+  <div class="name">
+    <a href="index.html" aria-label="Home" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
+      <div class="logo-frame">
+        <img class="site-logo" src="image/logo_header.png" alt="Leo POUILLY logo" />
+      </div>
+      <span class="site-title">Leo POUILLY - Portfolio</span>
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="resume.html">Resume</a>
+    <div class="nav-dropdown">
+      <button class="dropdown-toggle" type="button">Projects</button>
+      <div class="dropdown-menu">
+        <a href="PJT_IA.html">AI & Machine Learning</a>
+        <a href="LC.html">Les Companions</a>
+        <a href="LeRobot.html">S101-ARM Robot</a>
+        <a href="FSAM.html">Formula Student</a>
+        <a href="PJT_Aile.html">Glider Wing Design</a>
+        <a href="REPCE.html">Shoulder Prosthesis</a>
+        <a href="AMJE.html">AMJE Lille</a>
+        <a href="CRI.html">Carbon Risk Intelligence</a>
+        <a href="ENTREP.html">ENTREP's</a>
+        <a href="TIPE.html">Sports Betting Arbitrage</a>
+        <a href="Foundry.html">Foundry skills</a>
+        <a href="SHERCO.html">Sherco</a>
+      </div>
+    </div>
+    <a href="academics.html">Academics</a>
+
+  </nav>
+</header>
+    <main>
+      <div style="text-align: center;">
+        <h1 class="projects-title" style="margin-bottom: 20px;">
+          S101-ARM – Robotics Project
+        </h1>
+        <div style="margin-bottom: 20px;">
+          <img src="image/LeRobot/logo_hugging_face.png" alt="Hugging Face logo" style="height: 64px; width: auto;" />
+        </div>
+      </div>
+      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #333;">Construction and hardware integration of a low-cost, open-source robotic arm designed for AI research and Imitation Learning. The project focuses on building a 'Follower' arm capable of precise teleoperation and data collection for future neural network training.</p>
+
+<div class="academic-block">
+  <div class="academic-text">
+    <h2>Additive Manufacturing & Parts Preparation</h2>
+    
+    <p>
+      The mechanical components were fabricated using PLA on a Creality K1 Max (0.4mm nozzle). 
+      To ensure the structural integrity required for the robotic joints, I optimized the slicing profile 
+      for strength and dimensional accuracy rather than speed. This specific configuration ensures precise 
+      bearing fitment and smooth kinematic action without mechanical backlash.
+    </p>
+
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8c1515; margin-top: 15px; font-size: 0.9rem;">
+        <strong style="display: block; margin-bottom: 8px; color: #333;">Engineering Print Settings:</strong>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+            <li>-  <strong>Walls:</strong> 3-4 perimeters (Max Rigidity)</li>
+            <li>-  <strong>Infill:</strong> 25% Gyroid (Omnidirectional strength)</li>
+            <li>-  <strong>Outer Wall Speed:</strong> 150 mm/s (Tolerance control)</li>
+            <li>-  <strong>Temp:</strong> 220°C Nozzle / 60°C Bed</li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="academic-images">
+    <div class="carousel" data-carousel="robot1">
+      <img src="image/LeRobot/paramètre_impression.png" class="carousel-image show" alt="Creality K1 Max Slicing Settings for LeRobot" />
+    </div>
+  </div>
+</div>
+
+<div class="academic-block">
+  
+  <div class="academic-images">
+    <div class="carousel" data-carousel="robot2">
+      <img src="image/LeRobot/calibration.png" class="carousel-image show" alt="Feetech Servo Calibration Process" />
+    </div>
+  </div>
+
+  <div class="academic-text">
+    <h2>Actuator Calibration & Bus Configuration</h2>
+    
+    <p>
+      Before mechanical integration, I configured the Feetech STS-series bus servos using the 
+      <strong>LeRobot Python SDK</strong> on an environment. This phase ensures that the physical 
+      actuators communicate correctly via the serial bus interface.
+    </p>
+
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8c1515; margin-top: 15px; font-size: 0.9rem;">
+        <strong style="display: block; margin-bottom: 8px; color: #333;">Configuration Protocol:</strong>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+            <li style="margin-bottom: 5px;">
+                - <strong>Servo ID Assignment:</strong> Flashed unique IDs (1-6) to allow daisy-chain communication.
+            </li>
+            <li style="margin-bottom: 5px;">
+                - <strong>Baud Rate:</strong> Configured to <strong>1Mbps</strong> for low-latency data transmission.
+            </li>
+            <li>
+                - <strong>Zeroing & Alignment:</strong> Precise software zeroing to align physical hardware with the digital <strong>URDF model</strong>.
+            </li>
+        </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="academic-block">
+  <div class="academic-text">
+    <h2>Mechanical Assembly & Integration</h2>
+    
+    <p>
+      I executed the full electromechanical integration of the 6-axis manipulator (Follower/Leader Configuration). 
+      This final stage required assembling the printed components with the calibrated actuators, 
+      transforming individual parts into a cohesive kinematic chain.
+    </p>
+
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8c1515; margin-top: 15px; font-size: 0.9rem;">
+        <strong style="display: block; margin-bottom: 8px; color: #333;">Assembly Highlights:</strong>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+            <li style="margin-bottom: 5px;">
+                🔹 <strong>Kinematic Assembly:</strong> Assembled Pitch, Roll, and Gripper mechanisms, integrating bearings to reduce friction to a minimum.
+            </li>
+            <li style="margin-bottom: 5px;">
+                🔹 <strong>Cable Management:</strong> Routed servo cables through hollow structural parts to prevent binding during full Range of Motion (ROM).
+            </li>
+            <li>
+                🔹 <strong>Mechanical Validation:</strong> Verified passive <em>back-drivability</em>, ensuring the motors can be manually manipulated smoothly for teleoperation tasks.
+            </li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="academic-images">
+    <div class="carousel" data-carousel="robot3">
+      <img src="image/LeRobot/LeRobot_photo.jpeg" class="carousel-image show" alt="LeRobot SO-100 Assembled" />
+    </div>
+  </div>
+</div>
+<div class="academic-block">
+  
+  <div class="academic-images">
+    <div class="carousel" data-carousel="roadmap">
+      <img src="image/LeRobot/hackathon.png" class="carousel-image show" alt="LeRobot AI Training Roadmap" />
+    </div>
+  </div>
+
+  <div class="academic-text">
+    <h2>Next Steps: Teleoperation & AI Training</h2>
+    
+    <p>
+      With the hardware fully validated, I am now transitioning to the software pipeline. 
+      The immediate goal is to bridge the gap between physical mechanics and digital intelligence 
+      using <strong>Imitation Learning</strong> techniques.
+    </p>
+
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8C1515; margin-top: 15px; font-size: 0.9rem;">
+        <strong style="display: block; margin-bottom: 8px; color: #8C1515;">Current Roadmap (ACT Implementation):</strong>
+        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
+            <li style="margin-bottom: 5px;">
+                -   <strong>Teleoperation Setup:</strong> Configuring the Python environment to control the Follower arm using a game controller or a Leader arm.
+            </li>
+            <li style="margin-bottom: 5px;">
+                -   <strong>Data Collection:</strong> Recording a dataset of 50+ demonstration episodes (in HDF5 format) for a specific manipulation task.
+            </li>
+            <li style="margin-bottom: 5px;">
+                -   <strong>ACT Policy Training:</strong> Training an <em>Action Chunking Transformer</em> neural network to clone the behavior and achieve autonomous motion.
+            </li>
+            <li>
+                -   <strong>Hackathon Training:</strong> Planning to participate in a robotics hackathon to accelerate the training process and benchmark the robot's performance in real-world competitive scenarios.
+            </li>
+        </ul>
+    </div>
+  </div>
+
+</div>
+      <div style="margin-top: 60px; text-align: left;">
+        <a href="projects.html" class="project-link">← Back to Projects</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

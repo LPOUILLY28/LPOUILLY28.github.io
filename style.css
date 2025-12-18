@@ -1,0 +1,1090 @@
+:root {
+  --primary: #0a0a0a;
+  --accent: #8c1515;
+  --background: #ffffff;
+  --surface: #f8f8f8;
+  --text: #0a0a0a;
+  --muted: #666666;
+  --border: #e9e9e9;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --header-height: 84px;
+  --font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  --sans-family: 'Inter', Arial, sans-serif;
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --secondary: #6f0f0f;
+  --light: #ffffff;
+}
+
+/* Clean, academic body */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Inter:wght@300;400;600&display=swap');
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--background);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--header-height);
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 28px;
+  background: transparent;
+  width: 100%;
+}
+
+/* Minimal, fixed header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 28px;
+  height: var(--header-height);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  z-index: 9999;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.site-logo {
+  max-height: calc(var(--header-height) - 20px);
+  width: auto;
+  display: block;
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+nav a {
+  font-family: var(--sans-family);
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+nav a:hover, nav a.active {
+  color: var(--primary);
+  background: var(--surface);
+}
+
+/* Projects dropdown styles */
+.nav-dropdown {
+  position: relative;
+}
+.dropdown-toggle {
+  background: transparent;
+  border: none;
+  font-family: var(--sans-family);
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.dropdown-toggle::after {
+  content: "▾";
+  font-size: 0.75rem;
+  display: inline-block;
+  transition: transform 0.18s ease;
+  color: var(--muted);
+}
+.nav-dropdown.open .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 240px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(10,10,10,0.08);
+  display: none;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 1200;
+  pointer-events: auto;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+}
+.dropdown-menu a:hover {
+  background: var(--surface);
+}
+.nav-dropdown.open .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu .dropdown-links { display: flex; flex-direction: column; gap: 6px; }
+
+@media (max-width: 900px) {
+  .dropdown-menu { flex-direction: column; }
+}
+
+/* Hover behavior on non-touch devices */
+@media (hover: hover) and (min-width: 700px) {
+  .nav-dropdown:hover .dropdown-menu { display: block; opacity: 1; transform: translateY(0); }
+  .nav-dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }
+}
+
+/* Make dropdown stay open when toggled by JS and ensure no tiny gap hides it */
+.nav-dropdown { --dd-gap: 4px; }
+.nav-dropdown .dropdown-menu a { color: var(--text); }
+
+/* Global button color: use Stanford cardinal with white text */
+.cta, .project-link, .details-button, .rainbow-hover, .project-btn {
+  background: #8C1515 !important;
+  color: #fff !important;
+  border-color: #8C1515 !important;
+}
+.cta:hover, .project-link:hover, .details-button:hover, .rainbow-hover:hover, .project-btn:hover {
+  background: #6f0f0f; /* slightly darker on hover */
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+/* Carousel arrows use accent and white chevrons */
+.arrow, .academic-images .arrow {
+  background: var(--accent);
+  border: 2px solid rgba(255,255,255,0.9);
+}
+.arrow::before, .academic-images .arrow::before { border-color: #fff; }
+
+/* Project button hover - darker accent */
+.project-btn:hover {
+  background: #6f0f0f;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 700px) {
+  header { padding: 0 16px; }
+  .logo-frame { width: 56px; height: 56px; }
+  .site-logo { max-height: calc(var(--header-height) - 28px); }
+  nav { gap: 10px; }
+  nav a { font-size: 0.85rem; }
+}
+
+/* Academics page: color the carousel arrows with accent and white chevrons */
+.page-academics .arrow,
+.page-academics .academic-images .arrow {
+  background: var(--accent) !important;
+  border: 2px solid rgba(255,255,255,0.9) !important;
+}
+.page-academics .arrow::before,
+.page-academics .academic-images .arrow::before {
+  border-color: #fff !important;
+}
+
+.page-academics .arrow:hover,
+.page-academics .academic-images .arrow:hover {
+  background: #6f0f0f !important;
+}
+
+
+/* Projects page: neutralize colors for project sections */
+.page-projects .academic-block,
+.page-projects .project,
+.page-projects .project-card,
+.page-projects .project-marquee,
+.page-projects .project-marquee-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+}
+.page-projects .carousel,
+.page-projects .project-carousel,
+.page-projects .academic-images .carousel {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.page-projects .details-button,
+.page-projects .project-btn,
+.page-projects .cta,
+.page-projects .project-link {
+  background: #8C1515 !important;
+  color: #fff !important;
+  border: 1px solid #8C1515 !important;
+  box-shadow: none !important;
+}
+.page-projects .details-button:hover,
+.page-projects .project-btn:hover,
+.page-projects .cta:hover,
+.page-projects .project-link:hover {
+  background: #6f0f0f !important;
+  color: #fff !important;
+}
+.page-projects .carousel-dots span.active { background: #bdbdbd !important; }
+
+/* Hide arrows on projects page */
+.page-projects .arrow,
+.page-projects .academic-images .arrow {
+  display: none !important;
+}
+
+.page-projects .carousel-dots {
+  display: none !important;
+}
+
+
+/* -- ABOUT & PROFIL -- */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 54px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.left {
+  flex: 2;
+  min-width: 290px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--primary);
+}
+.right {
+  flex: 1;
+  min-width: 240px;
+  text-align: center;
+}
+.right img {
+  width: 190px; max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 11px;
+  box-shadow: 0 4px 18px #8c1515, 0 2px 36px #8c1515;
+  border: 2.5px solid var(--accent);
+  background: linear-gradient(145deg,#dbeafe 70%,#8c1515 100%);
+}
+.right h2 {
+  font-weight: 700;
+  font-size: 1.18rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  font-size: 1.25rem;
+}
+.social-icons a {
+  color: var(--primary);
+  background: rgba(36,107,253,0.07);
+  border-radius: 50%;
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  border: 1.5px solid #c7eaff;
+}
+.social-icons a:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* -- TIMELINE & PROJECTS CARDS -- */
+.timeline,
+.project {
+  background: linear-gradient(135deg,#f7fbff 60%,#eaf2fb 100%);
+  border-radius: 15px;
+  padding: 18px 22px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-card);
+  border: 1.3px solid #e1e7f2;
+}
+
+/* Style spécial pour la section Conception aile de planeur */
+.glider-wing {
+  border-left: 6px solid #8c1515;
+  background: linear-gradient(120deg, #eaf2fb 80%, #70a1ff 100%);
+  box-shadow: 0 4px 32px #8c1515;
+}
+.glider-wing h3 {
+  color: #8c1515;
+  font-size: 1.25rem;
+}
+.glider-wing .cta {
+  background: #8c1515;
+  color: #fff;
+  border-color: #8c1515;
+}
+.glider-wing .cta:hover {
+  background: #8c1515;
+  color: #fff;
+  border-color: #8c1515;
+}
+
+
+/* -- ACADEMIC BLOCKS (LAYOUT HORIZONTAL) -- */
+.academic-block {
+  display: flex;
+  gap: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-card);
+  border: 1.3px solid #e1e7f2;
+  align-items: center;
+}
+
+.academic-text {
+  flex: 1.8;
+}
+
+.academic-text h2 {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.academic-text p {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.academic-images {
+  flex: 1;
+  max-width: 450px;
+}
+
+.academic-images .carousel {
+  height: 320px;
+  background: transparent;
+}
+
+.academic-images .carousel-image {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* ENTREP.html specific: use contain for AWG/Int_AWG images */
+.page-entrep .academic-images .carousel-image {
+  object-fit: contain;
+  padding: 10px;
+  background: #f8f8f8;
+}
+
+/* Carousel arrows placed at image edges for academic blocks */
+.academic-images .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  z-index: 12;
+}
+.academic-images .arrow.prev { left: 12px; }
+.academic-images .arrow.next { right: 12px; }
+
+/* Ensure the carousel container is positioned to allow absolute arrows */
+.academic-images .carousel { position: relative; overflow: hidden; }
+
+.academic-images .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display:flex; gap:8px; z-index:13; }
+.academic-images .carousel-dots span { width:9px; height:9px; border-radius:50%; background:#c7eaff; cursor:pointer; }
+.academic-images .carousel-dots span.active { background:var(--accent); transform: scale(1.2); }
+
+@media (max-width: 900px) {
+  .academic-block {
+    flex-direction: column;
+  }
+  .academic-images {
+    max-width: 100%;
+  }
+  .academic-images .carousel {
+    height: 220px;
+  }
+}
+
+.timeline-marker {
+  width: 16px; height: 16px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 10px #8c1515;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.timeline-content h2, .project-info h3 {
+  color: var(--primary);
+  font-weight: 700;
+}
+/* -- CAROUSELS -- */
+.carousel,
+.project-carousel {
+  position: relative;
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: none;
+  overflow: hidden;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-image, .project-carousel img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: none;
+  object-fit: contain;
+  box-shadow: none;
+}
+.carousel-image.show, .project-carousel img.show {
+  display: block;
+  animation: fadeInUp 0.7s;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+.arrow {
+  cursor: pointer;
+  height: 44px; 
+  width: 44px;
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  background: #8c1515;
+  border-radius: 50%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.9);
+  z-index: 10;
+}
+
+.arrow.prev { left: 14px;}
+.arrow.next { right: 14px;}
+
+.arrow:hover { 
+  background: #8c1515;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 24px #8c1515;
+  border-color: #fff;
+}
+
+.arrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  display: block;
+}
+
+.arrow.prev::before {
+  transform: rotate(-135deg);
+  margin-left: 3px;
+}
+
+.arrow.next::before {
+  transform: rotate(45deg);
+  margin-right: 3px;
+}
+
+.arrow:hover::before {
+  border-color: #fff;
+}
+
+.arrow-top, .arrow-bottom {
+  display: none;
+}
+.carousel-dots {
+  position: absolute; bottom: 12px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 9px; z-index: 2;
+}
+.carousel-dots span {
+  width: 9px; height: 9px;
+  background: #c7eaff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dots span.active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+/* -- CARDS & BUTTONS -- */
+.card-wrapper {
+  width: 100%; max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg,#dbeafe 0%,#8c1515 100%);
+  border-radius: 13px;
+  padding: 3px;
+  box-shadow: var(--shadow-card);
+}
+.card-inner {
+  background: #f7fbff;
+  border-radius: 11px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.card-inner img {
+  flex: 1 1 150px;
+  height: 100%; max-height: 260px;
+  object-fit: cover;
+  border-radius: 11px 1px 1px 11px;
+  box-shadow: 0 0 18px #8c1515;
+}
+.card-content {
+  flex: 2;
+  padding: 26px;
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-content h3 {
+  font-weight: 700; color: var(--accent);
+}
+
+/* -- BUTTONS -- */
+.cta, .project-link, .details-button, .rainbow-hover {
+  display: inline-block;
+  background: #8c1515;  /* Vert néon */
+  color: #1a1d29;  
+  padding: 11px 22px;
+  border-radius: 9px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 2px 12px #8c1515;
+  transition: background 0.22s, color 0.22s, transform 0.1s;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none;
+  border: 1.5px solid #dbeafe;
+}
+.cta:hover, .project-link:hover, .details-button:hover, .rainbow-hover:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+/* -- PROJECTS GRID -- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.project-card {
+  background: var(--light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e1e7f2;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(36,107,253,0.15);
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(36,107,253,0.1),
+    rgba(36,107,253,0.3)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #8c1515;
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,255,136,0.2);
+}
+
+.projects-title {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(36,107,253,0.15);
+  padding-bottom: 20px;
+}
+
+.projects-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* -- LIGHTBOX -- */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(36,107,253,0.09);
+  justify-content: center; align-items: center;
+  z-index: 1000;
+}
+#lightbox img {
+  max-width: 90%; max-height: 90%;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px #8c1515;
+  animation: zoomIn 0.3s;
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+/* -- BANDE PROJETS DÉFILANTE -- */
+.project-marquee {
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(90deg,#f7fbff 85%,#8c1515 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 14px #8c1515;
+  margin: 26px 0 32px 0;
+  position: relative;
+  z-index: 3;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  border: 1.4px solid #dbeafe;
+}
+.marquee-inner {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  animation: marquee-move 20s linear infinite;
+}
+@keyframes marquee-move {
+  0% { transform: translateX(0);}
+  100% { transform: translateX(-50%);}
+}
+.project-marquee-card {
+  min-width: 195px;
+  max-width: 195px;
+  min-height: 140px;
+  background: #eaf2fb;
+  border-radius: 15px;
+  box-shadow: 0 0px 22px #8c1515;
+  text-align: center;
+  text-decoration: none;
+  color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 8px 10px 8px;
+  position: relative;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 1.5px solid #dbeafe;
+}
+.project-marquee-card:hover {
+  transform: scale(1.07) translateY(-4px);
+  box-shadow: 0 8px 34px #8c1515;
+  z-index: 2;
+  border-color: var(--accent);
+}
+.project-marquee-card img {
+  width: 128px; height: 80px;
+  object-fit: cover;   /* on garde cover pour 95 % des images */
+  border-radius: 11px;
+  box-shadow: 0 0 14px #8c1515;
+  flex-shrink: 0;
+  border: 2px solid var(--accent);
+  background: #eaf2fb;
+}
+/* Correction spécifique pour le logo CarbonRisk */
+.project-marquee-card img.CarbonRisk {
+  object-fit: contain !important;
+  background: #fff; 
+}
+
+
+/* Spécifique pour les images ENTREP's et Sherco 50cc */
+.project-marquee-card img.entrep-logo,
+.project-marquee-card img.sherco-img {
+  object-fit: contain;
+  background: #fff;
+}
+
+/* Alignement vertical des blocs du bandeau défilant */
+.project-marquee-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-marquee-card span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.3px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  min-height: 2.4em;
+}
+
+/* -- Tête robot 3D animée -- */
+.robot3d {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16px;
+  animation: robot-bounce 2.5s infinite cubic-bezier(.6,-0.28,.74,.05);
+  filter: drop-shadow(0 0 8px #8c1515);
+}
+@keyframes robot-bounce {
+  0%,100% { transform: translateY(0);}
+  25% { transform: translateY(-4px);}
+  50% { transform: translateY(0);}
+  75% { transform: translateY(2px);}
+}
+#eye-left, #eye-right {
+  animation: eye-blink 5s infinite;
+}
+@keyframes eye-blink {
+  0%,92%,100% { ry: 4;}
+  95% { ry: 0.7;}
+}
+#pupil-left, #pupil-right {
+  animation: pupil-move 6s infinite;
+}
+@keyframes pupil-move {
+  0%,100% { cx: 24; }
+  30% { cx: 25.2;}
+  60% { cx: 22.8;}
+}
+#pupil-right { animation-name: pupil-move-right;}
+@keyframes pupil-move-right {
+  0%,100% { cx: 40; }
+  30% { cx: 41.2;}
+  60% { cx: 38.8;}
+}
+
+/* -- Responsive -- */
+@media (max-width: 900px) {
+  .container { padding: 14px 2px 16px;}
+  main { flex-direction: column; gap: 24px; align-items: center;}
+  .left, .right { max-width: 100%; text-align: center;}
+  .timeline, .project { padding: 12px 7px; }
+  .project-marquee { height: 110px;}
+  .marquee-inner { gap: 14px;}
+  .project-marquee-card { min-width: 128px; max-width: 128px; padding: 8px 3px 6px 3px;}
+  .project-marquee-card img { width: 90px; height: 54px;}
+}
+    .video-container {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        position: relative;
+        background: transparent;
+    }
+    
+    .video-full {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Correction pour la Monoplace : Zoom et Remontée */
+    .video-lift {
+        transform: scale(1.0) translateY(0);
+        transform-origin: center center;
+    }
+
+    /* CSS for Image Gallery (Side by Side) */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .photo-frame {
+        width: 100%;
+        height: 250px; /* Fixed height for alignment */
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .photo-frame img:hover {
+        transform: scale(1.05);
+    }
+    
+    .full-width-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+/* =========================================
+   VERSION MOBILE (A ajouter à la fin du CSS)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* 1. HEADER & NAVIGATION */
+  /* On débloque la hauteur pour que le menu puisse s'empiler */
+  header {
+    height: auto; 
+    padding: 12px 16px;
+    flex-direction: column; /* Le logo au-dessus, le menu en dessous */
+    position: relative; /* On le détache du haut pour éviter qu'il cache le texte si trop grand */
+  }
+  
+  /* On annule le padding-top du body car le header n'est plus "fixed" de la même manière */
+  body {
+    padding-top: 0; 
+  }
+
+  .name {
+    width: 100%;
+    justify-content: center; /* Centre le logo */
+    margin-bottom: 12px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+    gap: 8px;
+    margin-left: 0;
+  }
+
+  nav a, .dropdown-toggle {
+    padding: 8px 10px;
+    background: #f4f4f4; /* Petit fond gris pour mieux voir les boutons tactiles */
+    border-radius: 6px;
+    margin-bottom: 4px;
+  }
+
+  /* 2. MENU DÉROULANT (PROJECTS) */
+  /* Sur mobile, le dropdown s'affiche en bloc sous le bouton pour être stable */
+  .nav-dropdown {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dropdown-menu {
+    position: static; /* On l'insère dans le flux normal */
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #eee;
+    transform: none;
+    opacity: 1;
+    display: none; /* Reste caché sauf si click/hover */
+    margin-top: 5px;
+  }
+  
+  /* Astuce : Si on clique/touche, on veut que ça reste ouvert (nécessite le JS existant ou :focus) */
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown:focus-within .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 3. MARGES & TEXTE */
+  .container {
+    padding: 10px 16px; /* Marges réduites sur les côtés */
+    max-width: 100%;
+  }
+
+  h1, .projects-title {
+    font-size: 1.6rem; /* Titres moins énormes */
+    line-height: 1.3;
+  }
+
+  p, li {
+    font-size: 0.95rem; /* Texte lisible */
+    text-align: left; /* Évite les trous du texte justifié sur petit écran */
+  }
+
+  /* 4. LAYOUT (Mise en page) */
+  /* Empilement vertical des blocs */
+  main, .academic-block {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Spécial pour la page d'accueil : Photo (right) au dessus du texte (left) */
+  main {
+    flex-direction: column-reverse;
+  }
+  .right {
+    margin-bottom: 20px;
+  }
+
+  /* 5. IMAGES & VIDÉOS */
+  .academic-images, .left, .right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .academic-images .carousel {
+    height: auto; /* La hauteur s'adapte à l'image */
+    min-height: 200px;
+    aspect-ratio: 4/3; /* Ratio standard pour éviter l'écrasement */
+  }
+  
+  .video-container {
+    height: auto;
+    aspect-ratio: 16/9; /* Force le format vidéo cinéma */
+  }
+  
+  /* Ajustement des flèches du carrousel pour qu'elles ne gênent pas l'image */
+  .arrow {
+    width: 36px;
+    height: 36px;
+  }
+}

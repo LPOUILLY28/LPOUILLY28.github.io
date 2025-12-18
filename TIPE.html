@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sports Betting Arbitrage – Leo POUILLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="fade-in">
+  <div class="container">
+<header>
+  <div class="name">
+    <a href="index.html" aria-label="Home" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
+      <div class="logo-frame">
+        <img class="site-logo" src="image/logo_header.png" alt="Leo POUILLY logo" />
+      </div>
+      <span class="site-title">Leo POUILLY - Portfolio</span>
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="resume.html">Resume</a>
+    <div class="nav-dropdown">
+      <button class="dropdown-toggle" type="button">Projects</button>
+      <div class="dropdown-menu">
+        <a href="PJT_IA.html">AI & Machine Learning</a>
+        <a href="LC.html">Les Companions</a>
+        <a href="LeRobot.html">S101-ARM Robot</a>
+        <a href="FSAM.html">Formula Student</a>
+        <a href="PJT_Aile.html">Glider Wing Design</a>
+        <a href="REPCE.html">Shoulder Prosthesis</a>
+        <a href="AMJE.html">AMJE Lille</a>
+        <a href="CRI.html">Carbon Risk Intelligence</a>
+        <a href="ENTREP.html">ENTREP's</a>
+        <a href="TIPE.html">Sports Betting Arbitrage</a>
+        <a href="Foundry.html">Foundry skills</a>
+        <a href="SHERCO.html">Sherco</a>
+      </div>
+    </div>
+    <a href="academics.html">Academics</a>
+
+  </nav>
+</header>
+    <main>
+      <h1 class="projects-title" style="text-align: center;">Sports Betting Arbitrage Strategy (TIPE)</h1>
+      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #333;">
+        A statistical and algorithmic study on "Surebets", combining Web Scraping, Martingale theory, and Financial Arbitrage modeling.
+      </p>
+
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>1. The Arbitrage Concept & Mathematical Model</h2>
+          <p>
+            The core of this project investigates the possibility of generating risk-free profits by exploiting odds discrepancies between different bookmakers. This technique, known as <strong>Arbitrage Betting</strong> or "Surebet", relies on the following inequality:
+          </p>
+          <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.1rem; margin: 15px 0;">
+            $$ \frac{1}{O_1} + \frac{1}{O_2} < 1 $$
+          </p>
+          <p>
+            Where 0<sub>1</sub>and 0<sub>2</sub> are the highest odds available on the market for a binary outcome (e.g., Tennis). By distributing the stakes inversely proportional to the odds, we can mathematically guarantee a profit regardless of the match outcome, effectively neutralizing the bookmaker's margin.
+          </p>
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="tipe1">
+
+            <img src="image/TIPE/illustration_arbitrage_PS.png" class="carousel-image show" alt="Arbitrage Potential Gains Simulation" />
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-block">
+        <div class="academic-images">
+          <div class="carousel" data-carousel="tipe2">
+
+            <img src="image/TIPE/marge_moyenne.png" class="carousel-image show" alt="Average Bookmaker Margin Graph" />
+          </div>
+        </div>
+        <div class="academic-text">
+          <h2>2. Web Scraping Architecture & Data Parsing</h2>
+          <p>
+            To test this model, I developed a Python-based scraping pipeline to collect real-time odds from major bookmakers (OddsPortal, ATP Tour).
+          </p>
+          <p>
+            <strong>Technical Stack:</strong>
+            <br>• <strong>Selenium:</strong> For browser automation and handling dynamic JavaScript content.
+            <br>• <strong>BeautifulSoup (bs4):</strong> For parsing HTML structure and extracting specific odds containers.
+            <br>• <strong>JSON:</strong> For structured data storage and filtering.
+          </p>
+          <p>
+            The analysis of over 1100 matches revealed an <strong>average bookmaker margin of 5.43%</strong> (see graph), confirming that the market is generally efficient and weighted against the bettor.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>3. Statistical Analysis & Martingale Theory</h2>
+          <p>
+            Beyond simple arbitrage, I analyzed the betting process as a stochastic process (Random Walk). Using <strong>Martingale theory</strong> and <strong>Doob's Optional Stopping Theorem</strong>, I modeled the evolution of a bettor's bankroll.
+          </p>
+          <p>
+            <strong>Key Findings:</strong>
+            <br>The scraping algorithm successfully identified "negative margin" events. As shown in the graph, specific matches exhibited a margin as low as <strong>0.0044</strong> (and occasionally negative), creating a theoretical arbitrage window.
+          </p>
+          <p>
+            However, the asymptotic analysis (Kolmogorov's Law of Large Numbers) demonstrates that while short-term arbitrage is possible, practical limitations (account freezing, betting limits) make it a complex strategy to scale.
+          </p>
+
+          <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px;">
+            <a href="PDF/TIPE_2024_ANGLAIS.pdf" download class="details-button" style="padding: 12px 25px;">
+              <i class="fa fa-download"></i> Download Full Presentation (PDF)
+            </a>
+            <a href="PDF/MCOT_Leo.pdf" download class="details-button" style="padding: 12px 25px;">
+              <i class="fa fa-download"></i> Download Project Methodology (MCOT)
+            </a>
+          </div>
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="tipe3">
+
+            <img src="image/TIPE/Marge_minimal_par_match.png" class="carousel-image show" alt="Minimal Margin per Match Scatter Plot" />
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; text-align: left;">
+        <a href="projects.html" class="project-link">← Back to Projects</a>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

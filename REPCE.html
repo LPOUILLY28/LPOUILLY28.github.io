@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REPCE Project – Leo POUILLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body class="fade-in">
+  <div class="container">
+<header>
+  <div class="name">
+    <a href="index.html" aria-label="Home" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
+      <div class="logo-frame">
+        <img class="site-logo" src="image/logo_header.png" alt="Leo POUILLY logo" />
+      </div>
+      <span class="site-title">Leo POUILLY - Portfolio</span>
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="resume.html">Resume</a>
+    <div class="nav-dropdown">
+      <button class="dropdown-toggle" type="button">Projects</button>
+      <div class="dropdown-menu">
+        <a href="PJT_IA.html">AI & Machine Learning</a>
+        <a href="LC.html">Les Companions</a>
+        <a href="LeRobot.html">S101-ARM Robot</a>
+        <a href="FSAM.html">Formula Student</a>
+        <a href="PJT_Aile.html">Glider Wing Design</a>
+        <a href="REPCE.html">Shoulder Prosthesis</a>
+        <a href="AMJE.html">AMJE Lille</a>
+        <a href="CRI.html">Carbon Risk Intelligence</a>
+        <a href="ENTREP.html">ENTREP's</a>
+        <a href="TIPE.html">Sports Betting Arbitrage</a>
+        <a href="Foundry.html">Foundry skills</a>
+        <a href="SHERCO.html">Sherco</a>
+      </div>
+    </div>
+    <a href="academics.html">Academics</a>
+  </nav>
+</header>
+    <main>
+      <div style="text-align: center;">
+        <h1 class="projects-title" style="margin-bottom: 25px;">Prosthetic Shoulder Design & Mechanical Testing (REPCE)</h1>
+        <p style="margin-bottom: 15px; font-size: 1.1rem; color: #333; max-width: 900px; margin-left: auto; margin-right: auto;">
+          Manufacturing of a glenoid implant, mechanical characterization in the laboratory, and correlation with Abaqus Finite Element Analysis (FEA).
+        </p>
+        <div style="margin-bottom: 50px;">
+          <span style="background-color: #8C1515; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+            Biomechanics & Material Science
+          </span>
+        </div>
+      </div>
+
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>1. Manufacturing & Prototyping</h2>
+          <p>
+            The project began with the study of the glenohumeral joint anatomy to define the geometric constraints of the implant. We focused on a <strong>keeled glenoid implant</strong> design.
+          </p>
+          <p>
+            I manufactured the prosthesis using a molding process with <strong>Zortrax Resin Basic</strong>. This photopolymer resin was chosen for its mechanical properties (Young's Modulus ~2.2 GPa). The process involved precise liquid pouring into a silicone mold and curing to ensure geometric accuracy and surface finish.
+          </p>
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="repce1">
+            <div class="arrow prev" aria-label="Previous image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+
+            <img src="image/REPCE/anatomie.png" class="carousel-image show" alt="Shoulder Anatomy Study" />
+
+            
+            <div class="arrow next" aria-label="Next image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-block">
+        <div class="academic-images">
+          <div class="carousel" data-carousel="repce2">
+             <div class="arrow prev" aria-label="Previous image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+
+             
+             <img src="image/REPCE/versement_liquide.jpeg" class="carousel-image" alt="Resin Pouring Process" />
+             <img src="image/REPCE/application_prothese.jpeg" class="carousel-image" alt="Molding Application" />
+             <img src="image/REPCE/MEP_prothese.jpeg" class="carousel-image show" alt="Prosthesis Setup on Foam Block" />
+         
+             
+             <div class="arrow next" aria-label="Next image">
+               <div class="arrow-top"></div>
+               <div class="arrow-bottom"></div>
+             </div>
+             <div class="carousel-dots"></div>
+          </div>
+        </div>
+        
+        <div class="academic-text">
+          <h2>2. Mechanical Characterization</h2>
+          <p>
+            To validate the mechanical behavior of the implant, we conducted compression tests in the laboratory. The prosthesis was mounted on a foam block simulating the bone support (scapula).
+          </p>
+          <p>
+            <strong>Test Protocol:</strong>
+            <br>• <strong>Load:</strong> Axial compression up to <strong>150 N</strong>.
+            <br>• <strong>Equipment:</strong> Hydraulic traction/compression machine with a localized indenter.
+            <br>• <strong>Goal:</strong> Measure the vertical displacement (U2) and check for structural stability.
+          </p>
+          <p>
+            The experimental results showed a displacement of <strong>0.228 mm</strong> under a 150 N load, serving as a reference for our numerical model.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="academic-block">
+        <div class="academic-text">
+            <h2>Dynamic Testing Visualization</h2>
+            <p>
+                Video recording of the compression test cycle, highlighting the elastic deformation of the keel component under load.
+            </p>
+
+            <div style="margin-top: 25px;">
+              <a href="#" class="details-button" style="padding: 12px 25px; background-color: #555; border-color: #555; cursor: not-allowed;" title="Coming Soon">
+                <i class="fa fa-file-pdf"></i> Download Testing Report (Coming Soon)
+              </a>
+            </div>
+        </div>
+        <div class="academic-images">
+           <div class="video-container">
+             <video controls class="video-full">
+
+                <source src="Video/essai_cyclique_REPCE.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+             </video>
+           </div>
+           <p style="text-align:center; font-size:0.8rem; color:#666; margin-top:5px;">(Mechanical Compression Test)</p>
+        </div>
+      </div>
+
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>3. Finite Element Analysis (Abaqus)</h2>
+          <p>
+            I developed a digital twin of the experiment using <strong>Abaqus/CAE</strong> to correlate simulation with reality. The model used Quadratic Tetrahedral elements (C3D10).
+          </p>
+          <p>
+            <strong>Key Challenges & Solutions:</strong>
+            <br>The main challenge was defining the correct <strong>Boundary Conditions</strong>. Initial attempts resulted in rigid body motion. The solution involved partitioning the contact surface edges to apply specific constraints mimicking the foam support.
+          </p>
+          <p>
+            <strong>Results:</strong> By fine-tuning the Young's Modulus to <strong>2200 MPa</strong>, the simulation yielded a displacement of <strong>0.2281 mm</strong>, matching the experimental data (0.228 mm) with high precision.
+          </p>
+
+          <div style="margin-top: 25px;">
+            <a href="PDF/REPCE_ABAQUS_POUILLY_LEO_ANGL.pdf" download class="details-button" style="padding: 12px 25px;">
+              <i class="fa fa-download"></i> Download Abaqus Report
+            </a>
+          </div>
+        </div>
+        <div class="academic-images">
+          <img src="image/REPCE/FEA.png" alt="Abaqus FEA Results" style="width: 100%; height: auto; object-fit: contain;" />
+        </div>
+      </div>
+
+
+      <div style="margin-top: 60px; text-align: left;">
+        <a href="projects.html" class="project-link">← Back to Projects</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI & Machine Learning – Leo POUILLY</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="fade-in">
+  <div class="container">
+<header>
+  <div class="name">
+    <a href="index.html" aria-label="Home" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;">
+      <div class="logo-frame">
+        <img class="site-logo" src="image/logo_header.png" alt="Leo POUILLY logo" />
+      </div>
+      <span class="site-title">Leo POUILLY - Portfolio</span>
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="resume.html">Resume</a>
+    <div class="nav-dropdown">
+      <button class="dropdown-toggle" type="button">Projects</button>
+      <div class="dropdown-menu">
+        <a href="PJT_IA.html">AI & Machine Learning</a>
+        <a href="LC.html">Les Companions</a>
+        <a href="LeRobot.html">S101-ARM Robot</a>
+        <a href="FSAM.html">Formula Student</a>
+        <a href="PJT_Aile.html">Glider Wing Design</a>
+        <a href="REPCE.html">Shoulder Prosthesis</a>
+        <a href="AMJE.html">AMJE Lille</a>
+        <a href="CRI.html">Carbon Risk Intelligence</a>
+        <a href="ENTREP.html">ENTREP's</a>
+        <a href="TIPE.html">Sports Betting Arbitrage</a>
+        <a href="Foundry.html">Foundry skills</a>
+        <a href="SHERCO.html">Sherco</a>
+      </div>
+    </div>
+    <a href="academics.html">Academics</a>
+  </nav>
+</header>
+    <main>
+      <h1 class="projects-title" style="text-align: center;">Supervised Image Classification with CNN</h1>
+      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #333;">
+        A comparative study of Convolutional Neural Networks, Transfer Learning, and Ensemble Methods applied to MNIST and Fashion MNIST datasets.
+      </p>
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>1. CNN Architecture & MNIST Results</h2>
+          <p>
+            The objective of this project was to create a model capable of recognizing handwritten digits and clothing objects. We developed a Convolutional Neural Network (CNN) structured with alternating <strong>Convolution layers</strong> (to extract features), <strong>Pooling layers</strong> (to reduce dimensionality), and final <strong>Dense layers</strong> for classification.
+          </p>
+          
+          <img src="image/PJT IA/CNN_Architecture.png" alt="CNN Architecture Diagram" style="width: 100%; height: auto; object-fit: contain; margin: 15px 0;" />
+
+          <p>
+            The model was trained on the <strong>MNIST dataset</strong> (70,000 images of digits 0-9). The initial CNN model achieved a high performance with an accuracy of <strong>98%</strong>. The confusion matrix (right) highlights the model's precision, with very few misclassifications between digits.
+          </p>
+          </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="ia1">
+            <img src="image/PJT IA/MSNIST_matrix.png" class="carousel-image show" alt="MNIST Confusion Matrix and Digit Samples" />
+            <img src="image/PJT IA/MNIST_dataset.png" class="carousel-image" alt="MNIST Accuracy" />
+            <div class="arrow prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+            <div class="arrow next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="academic-block">
+        <div class="academic-images">
+          <div class="carousel" data-carousel="ia2">
+            <img src="image/PJT IA/FASHION_MNIST_matrix.png" class="carousel-image show" alt="Fashion MNIST Confusion Matrix" />
+            <img src="image/PJT IA/FASHION_MNIST_dataset.png" class="carousel-image" alt="Fashion MNIST Accuracy" />
+            <div class="arrow prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+            <div class="arrow next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+        <div class="academic-text">
+          <h2>2. Transfer Learning: KNN vs. Dense Layers</h2>
+          <p>
+            We extended the study to the more complex <strong>Fashion MNIST</strong> dataset (10 classes of clothing). We explored a <strong>Transfer Learning</strong> approach by using the trained CNN primarily for feature extraction.
+          </p>
+          <p>
+            We compared two classification methods using the extracted features:
+            <br>• <strong>Method 1 (KNN):</strong> A K-Nearest Neighbors algorithm ($k=10$).
+            <br>• <strong>Method 2 (Dense):</strong> The standard final dense layer of the neural network.
+          </p>
+          <p>
+            The initial Fashion MNIST model achieved an accuracy of <strong>89%</strong>. As seen in the confusion matrix, distinguishing between similar items like "Shirt," "T-shirt/top," and "Coat" proved more challenging than digit recognition.
+          </p>
+        </div>
+      </div>
+
+      <div class="academic-block">
+        <div class="academic-text">
+          <h2>3. Ensemble Methods & Optimization</h2>
+          <p>
+            To improve robustness and accuracy, we implemented an <strong>Ensemble Method</strong> combining three distinct models:
+          </p>
+          <ul style="margin-bottom: 15px;">
+             <li><strong>Model 1:</strong> Initial Network.</li>
+             <li><strong>Model 2:</strong> Sigmoid activation ($\sigma(x)=\frac{1}{1+e^{-x}}$) + Dropout layer.</li>
+             <li><strong>Model 3:</strong> ReLU activation ($f(x)=\max(0,x)$) + Layer removal + Dropout.</li>
+          </ul>
+          <p>
+            We aggregated predictions using a tiered logic: 1) Unanimous agreement, 2) Majority vote (2/3), 3) Divergence handling. This approach smoothed the learning curves (see graph) and improved the final global accuracy to roughly <strong>89.8%</strong>.
+          </p>
+          
+          <div style="margin-top: 20px;">
+            <a href="PDF/PJT IA 1A ANGLAIS.pdf" download class="details-button">
+              <i class="fa fa-download"></i> Download Project Report (PDF)
+            </a>
+          </div>
+
+        </div>
+        <div class="academic-images">
+          <div class="carousel" data-carousel="ia3">
+            <img src="image/PJT IA/accuracy1.png" class="carousel-image show" alt="Cross Entropy Loss and Accuracy Curves Pattern 1" />
+            <img src="image/PJT IA/accuracy2.png" class="carousel-image" alt="Cross Entropy Loss and Accuracy Curves Pattern 2" />
+            <img src ="image/PJT IA/accuracy3.png" class="carousel-image" alt="Cross Entropy Loss and Accuracy Curves Pattern 3" />
+            <div class="arrow prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+            <div class="arrow next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; text-align: left;">
+        <a href="projects.html" class="project-link">← Back to Projects</a>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
