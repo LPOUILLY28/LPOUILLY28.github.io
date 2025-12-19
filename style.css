@@ -1058,7 +1058,7 @@ main {
   }
   
   /* Spécial pour la page d'accueil : Photo (right) au dessus du texte (left) */
-  main {
+  body:not([class*="page-"]) main {
     flex-direction: column-reverse;
   }
   .right {
