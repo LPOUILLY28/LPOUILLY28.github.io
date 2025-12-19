@@ -58,70 +58,6 @@
 
 <div class="academic-block">
   <div class="academic-text">
-    <h2>Additive Manufacturing & Parts Preparation</h2>
-    
-    <p>
-      The mechanical components were fabricated using PLA on a Creality K1 Max (0.4mm nozzle). 
-      To ensure the structural integrity required for the robotic joints, I optimized the slicing profile 
-      for strength and dimensional accuracy rather than speed. This specific configuration ensures precise 
-      bearing fitment and smooth kinematic action without mechanical backlash.
-    </p>
-
-    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8c1515; margin-top: 15px; font-size: 0.9rem;">
-        <strong style="display: block; margin-bottom: 8px; color: #333;">Engineering Print Settings:</strong>
-        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
-            <li>-  <strong>Walls:</strong> 3-4 perimeters (Max Rigidity)</li>
-            <li>-  <strong>Infill:</strong> 25% Gyroid (Omnidirectional strength)</li>
-            <li>-  <strong>Outer Wall Speed:</strong> 150 mm/s (Tolerance control)</li>
-            <li>-  <strong>Temp:</strong> 220°C Nozzle / 60°C Bed</li>
-        </ul>
-    </div>
-  </div>
-
-  <div class="academic-images">
-    <div class="carousel" data-carousel="robot1">
-      <img src="image/LeRobot/paramètre_impression.png" class="carousel-image show" alt="Creality K1 Max Slicing Settings for LeRobot" />
-    </div>
-  </div>
-</div>
-
-<div class="academic-block">
-  
-  <div class="academic-images">
-    <div class="carousel" data-carousel="robot2">
-      <img src="image/LeRobot/calibration.png" class="carousel-image show" alt="Feetech Servo Calibration Process" />
-    </div>
-  </div>
-
-  <div class="academic-text">
-    <h2>Actuator Calibration & Bus Configuration</h2>
-    
-    <p>
-      Before mechanical integration, I configured the Feetech STS-series bus servos using the 
-      <strong>LeRobot Python SDK</strong> on an environment. This phase ensures that the physical 
-      actuators communicate correctly via the serial bus interface.
-    </p>
-
-    <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8c1515; margin-top: 15px; font-size: 0.9rem;">
-        <strong style="display: block; margin-bottom: 8px; color: #333;">Configuration Protocol:</strong>
-        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
-            <li style="margin-bottom: 5px;">
-                - <strong>Servo ID Assignment:</strong> Flashed unique IDs (1-6) to allow daisy-chain communication.
-            </li>
-            <li style="margin-bottom: 5px;">
-                - <strong>Baud Rate:</strong> Configured to <strong>1Mbps</strong> for low-latency data transmission.
-            </li>
-            <li>
-                - <strong>Zeroing & Alignment:</strong> Precise software zeroing to align physical hardware with the digital <strong>URDF model</strong>.
-            </li>
-        </ul>
-    </div>
-  </div>
-
-</div>
-
-<div class="academic-block">
-  <div class="academic-text">
     <h2>Mechanical Assembly & Integration</h2>
     
     <p>
@@ -134,60 +70,71 @@
         <strong style="display: block; margin-bottom: 8px; color: #333;">Assembly Highlights:</strong>
         <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
             <li style="margin-bottom: 5px;">
-                🔹 <strong>Kinematic Assembly:</strong> Assembled Pitch, Roll, and Gripper mechanisms, integrating bearings to reduce friction to a minimum.
+                - <strong>Kinematic Assembly:</strong> Assembled Pitch, Roll, and Gripper mechanisms, integrating bearings to reduce friction to a minimum.
             </li>
             <li style="margin-bottom: 5px;">
-                🔹 <strong>Cable Management:</strong> Routed servo cables through hollow structural parts to prevent binding during full Range of Motion (ROM).
+                - <strong>Cable Management:</strong> Routed servo cables through hollow structural parts to prevent binding during full Range of Motion (ROM).
             </li>
             <li>
-                🔹 <strong>Mechanical Validation:</strong> Verified passive <em>back-drivability</em>, ensuring the motors can be manually manipulated smoothly for teleoperation tasks.
+                - <strong>Mechanical Validation:</strong> Verified passive <em>back-drivability</em>, ensuring the motors can be manually manipulated smoothly for teleoperation tasks.
             </li>
         </ul>
     </div>
   </div>
 
   <div class="academic-images">
-    <div class="carousel" data-carousel="robot3">
-      <img src="image/LeRobot/LeRobot_photo.jpeg" class="carousel-image show" alt="LeRobot SO-100 Assembled" />
-    </div>
+    <img src="image/LeRobot/LeRobot_photo.jpeg" alt="LeRobot SO-100 Assembled" style="width: 100%; height: auto; object-fit: contain;" />
   </div>
 </div>
+
 <div class="academic-block">
-  
   <div class="academic-images">
-    <div class="carousel" data-carousel="roadmap">
-      <img src="image/LeRobot/hackathon.png" class="carousel-image show" alt="LeRobot AI Training Roadmap" />
+    <div class="carousel" data-carousel="hackathon1">
+      <img src="image/LeRobot/Team.jpeg" class="carousel-image show" alt="AMD Robotics Hackathon Team" />
+      <img src="image/LeRobot/Set_up_hackathon.jpeg" class="carousel-image" alt="Robot Setup at the Hackathon" />
+      <img src="image/LeRobot/open_space.jpeg" class="carousel-image" alt="Station F Hackathon Space" />
+      <div class="arrow prev"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+      <div class="arrow next"><div class="arrow-top"></div><div class="arrow-bottom"></div></div>
+      <div class="carousel-dots"></div>
     </div>
   </div>
 
   <div class="academic-text">
-    <h2>Next Steps: Teleoperation & AI Training</h2>
+    <h2>AMD Robotics Hackathon 2025</h2>
     
     <p>
-      With the hardware fully validated, I am now transitioning to the software pipeline. 
-      The immediate goal is to bridge the gap between physical mechanics and digital intelligence 
-      using <strong>Imitation Learning</strong> techniques.
+      I participated in the <strong>AMD Robotics Hackathon 2025</strong> hosted by AMD and Hugging Face at Station F, Paris. Our team developed a robot that played <strong>Tic-Tac-Toe</strong> using <strong>LeRobot and imitation learning</strong>.
+    </p>
+
+    <p>
+      We created a complete robotics pipeline integrating vision, decision-making via a <strong>Vision-Language Model (VLM)</strong>, and motion execution. Despite challenges during dataset merging, this experience taught me tremendously about imitation learning and practical robotics constraints.
     </p>
 
     <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #8C1515; margin-top: 15px; font-size: 0.9rem;">
-        <strong style="display: block; margin-bottom: 8px; color: #8C1515;">Current Roadmap (ACT Implementation):</strong>
-        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6;">
-            <li style="margin-bottom: 5px;">
-                -   <strong>Teleoperation Setup:</strong> Configuring the Python environment to control the Follower arm using a game controller or a Leader arm.
-            </li>
-            <li style="margin-bottom: 5px;">
-                -   <strong>Data Collection:</strong> Recording a dataset of 50+ demonstration episodes (in HDF5 format) for a specific manipulation task.
-            </li>
-            <li style="margin-bottom: 5px;">
-                -   <strong>ACT Policy Training:</strong> Training an <em>Action Chunking Transformer</em> neural network to clone the behavior and achieve autonomous motion.
-            </li>
-            <li>
-                -   <strong>Hackathon Training:</strong> Planning to participate in a robotics hackathon to accelerate the training process and benchmark the robot's performance in real-world competitive scenarios.
-            </li>
-        </ul>
+        <strong style="display: block; margin-bottom: 8px; color: #8C1515;">Acknowledgments:</strong>
+        <p style="margin: 0; line-height: 1.6;">
+            Thanks to <strong>AMD and Hugging Face</strong>, to <strong>Steven Palma and Guruprasad MP</strong>, and to my teammates <strong>Eric Huang, Victor Gomez, and Ammar Moise</strong> for this incredible collaboration.
+        </p>
     </div>
   </div>
+</div>
 
+<div class="academic-block">
+  <div class="academic-text">
+    <h2>Robot in Action</h2>
+    <p>
+      Example of a training episode recorded during the hackathon, demonstrating the robot's teleoperation capabilities and data collection process for imitation learning.
+    </p>
+  </div>
+  <div class="academic-images">
+    <div class="video-container">
+      <video controls muted class="video-full">
+        <source src="Video/Episode_test.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p style="text-align:center; font-size:0.8rem; color:#666; margin-top:5px;">(Training Episode Example)</p>
+  </div>
 </div>
       <div style="margin-top: 60px; text-align: left;">
         <a href="projects.html" class="project-link">← Back to Projects</a>
